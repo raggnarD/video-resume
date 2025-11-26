@@ -77,6 +77,37 @@ Edit `styles.css` to customize:
 - Safari (latest)
 - Edge (latest)
 
+## Deployment
+
+### GitHub Pages with Custom Domain
+
+1. **Enable GitHub Pages:**
+   - Go to your repository settings on GitHub
+   - Navigate to "Pages" in the left sidebar
+   - Under "Source", select the `main` branch
+   - Click "Save"
+
+2. **Configure Custom Domain (jameskocher.com):**
+   - The `CNAME` file is already included in the repository
+   - In your Squarespace domain settings, add these DNS records:
+     - **Type:** CNAME
+     - **Host:** www
+     - **Points to:** raggnarD.github.io
+     - **Type:** A
+     - **Host:** @ (or blank)
+     - **Points to:** GitHub Pages IP addresses:
+       - 185.199.108.153
+       - 185.199.109.153
+       - 185.199.110.153
+       - 185.199.111.153
+   - In GitHub repository settings → Pages, enter `jameskocher.com` in the custom domain field
+   - Wait for DNS propagation (can take up to 24-48 hours)
+
+3. **Alternative: Squarespace Integration**
+   - Create a new page in Squarespace
+   - Use a Code Block to embed the HTML
+   - Or use Squarespace's Developer Mode to upload the files
+
 ## Future Enhancements
 
 - Add more roles easily by extending the `rolesData` object

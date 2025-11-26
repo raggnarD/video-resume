@@ -24,12 +24,14 @@
 
     <!-- Hero Section (Featured Role) -->
     <section class="hero" id="home">
+        <video class="hero-background-video" autoplay muted loop playsinline>
+            <source src="videos/ring-trailer.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-            <h1 class="hero-title">Leading the Charge at Ideal Innovations</h1>
+            <h1 class="hero-title">Ring of Trust</h1>
             <p class="hero-description">
-                An in-depth look at my tenure as Founder & CEO of Ideal Innovations, Inc., 
-                where I spearheaded innovative solutions for the U.S. government and led 
-                groundbreaking initiatives in technology and innovation.
+                Senior Product Manager at Amazon (Ring). Shaping the strategy for the world's most recognized 
+                smart doorbell brand, delivering innovations that help millions of families feel safer and more connected.
             </p>
             <div class="hero-buttons">
                 <button class="btn btn-play" onclick="openModal('role1')">
@@ -47,82 +49,93 @@
     <section class="portfolio-section" id="portfolio">
         <h2 class="section-title">My Professional Journey</h2>
         
-        <!-- Role 1: Ideal Innovations -->
-        <div class="row">
-            <h3 class="row-title">Leadership & Innovation</h3>
-            <div class="row-container">
-                <div class="movie-card" onclick="openModal('role1')">
-                    <div class="movie-poster">
-                        <div class="poster-placeholder">Ideal Innovations</div>
-                    </div>
-                    <div class="movie-info">
-                        <h4>Leading the Charge</h4>
-                        <p>Founder & CEO</p>
-                    </div>
+        <!-- All Roles in One Horizontal Row -->
+        <div class="row-container">
+            <!-- Role 1: Amazon Ring (Most Recent) -->
+            <div class="movie-card" onclick="openModal('role1')">
+                <div class="movie-poster" id="poster-role1">
+                    <div class="poster-placeholder">Ring</div>
+                </div>
+                <div class="movie-info">
+                    <h4>Ring of Trust</h4>
+                    <p>Senior Product Manager</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Role 2: Michael Baker International -->
-        <div class="row">
-            <h3 class="row-title">Executive Leadership</h3>
-            <div class="row-container">
-                <div class="movie-card" onclick="openModal('role2')">
-                    <div class="movie-poster">
-                        <div class="poster-placeholder">Michael Baker</div>
-                    </div>
-                    <div class="movie-info">
-                        <h4>Engineering Excellence</h4>
-                        <p>Executive VP & COO</p>
-                    </div>
+            <!-- Role 2: Teltech -->
+            <div class="movie-card" onclick="openModal('role2')">
+                <div class="movie-poster" id="poster-role2">
+                    <div class="poster-placeholder">Teltech</div>
+                </div>
+                <div class="movie-info">
+                    <h4>The Shield</h4>
+                    <p>Senior Product Manager</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Role 3: Solids Technology -->
-        <div class="row">
-            <h3 class="row-title">Technology Solutions</h3>
-            <div class="row-container">
-                <div class="movie-card" onclick="openModal('role3')">
-                    <div class="movie-poster">
-                        <div class="poster-placeholder">Solids Technology</div>
-                    </div>
-                    <div class="movie-info">
-                        <h4>Innovating Solutions</h4>
-                        <p>President</p>
-                    </div>
+            <!-- Role 3: Locus Energy -->
+            <div class="movie-card" onclick="openModal('role3')">
+                <div class="movie-poster" id="poster-role3">
+                    <div class="poster-placeholder">Locus</div>
+                </div>
+                <div class="movie-info">
+                    <h4>Solar Protocol</h4>
+                    <p>Product Manager</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Role 4: The Data Council -->
-        <div class="row">
-            <h3 class="row-title">Data & Strategy</h3>
-            <div class="row-container">
-                <div class="movie-card" onclick="openModal('role4')">
-                    <div class="movie-poster">
-                        <div class="poster-placeholder">Data Council</div>
-                    </div>
-                    <div class="movie-info">
-                        <h4>Strategic Leadership</h4>
-                        <p>President</p>
-                    </div>
+            <!-- Role 4: Mars Chocolate -->
+            <div class="movie-card" onclick="openModal('role4')">
+                <div class="movie-poster" id="poster-role4">
+                    <div class="poster-placeholder">Mars</div>
+                </div>
+                <div class="movie-info">
+                    <h4>Sweet Operations</h4>
+                    <p>Packaging Buyer</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Role 5: Music Career -->
-        <div class="row">
-            <h3 class="row-title">Creative Pursuits</h3>
-            <div class="row-container">
-                <div class="movie-card" onclick="openModal('role5')">
-                    <div class="movie-poster">
-                        <div class="poster-placeholder">Music</div>
-                    </div>
-                    <div class="movie-info">
-                        <h4>Harmonizing Success</h4>
-                        <p>Musician & Artist</p>
-                    </div>
+            <!-- Role 5: Apple Inc -->
+            <div class="movie-card" onclick="openModal('role5')">
+                <div class="movie-poster" id="poster-role5">
+                    <div class="poster-placeholder">Apple</div>
+                </div>
+                <div class="movie-info">
+                    <h4>Empire of Inventory</h4>
+                    <p>Inventory Control Manager</p>
+                </div>
+            </div>
+
+            <!-- Role 6: Apple Genius Bar -->
+            <div class="movie-card" onclick="openModal('role6')">
+                <div class="movie-poster" id="poster-role6">
+                    <div class="poster-placeholder">Apple</div>
+                </div>
+                <div class="movie-info">
+                    <h4>Genius Bar: First Responder</h4>
+                    <p>Apple Genius</p>
+                </div>
+            </div>
+
+            <!-- Role 7: Franklin & Marshall College -->
+            <div class="movie-card" onclick="openModal('role7')">
+                <div class="movie-poster" id="poster-role7">
+                    <div class="poster-placeholder">F&M</div>
+                </div>
+                <div class="movie-info">
+                    <h4>The Workroom</h4>
+                    <p>Computer Workroom Manager</p>
+                </div>
+            </div>
+
+            <!-- Role 8: The Big Short (Oldest) -->
+            <div class="movie-card" onclick="openModal('role8')">
+                <div class="movie-poster" id="poster-role8">
+                    <div class="poster-placeholder">The Big Short</div>
+                </div>
+                <div class="movie-info">
+                    <h4>Summer of Subprime</h4>
+                    <p>Accounting Assistant</p>
                 </div>
             </div>
         </div>
@@ -144,6 +157,7 @@
                     <p id="modalDescription">Role description will appear here</p>
                     <div class="modal-details">
                         <p><strong>Position:</strong> <span id="modalPosition">Position</span></p>
+                        <p><strong>Company:</strong> <span id="modalCompany">Company</span></p>
                         <p><strong>Duration:</strong> <span id="modalDuration">Duration</span></p>
                     </div>
                 </div>

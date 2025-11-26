@@ -82,6 +82,20 @@ body {
     overflow: hidden;
 }
 
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1.2);
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.6;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -178,25 +192,14 @@ body {
     padding-left: 10px;
 }
 
-.row {
-    margin-bottom: 50px;
-}
-
-.row-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    padding-left: 10px;
-    color: var(--text-gray);
-}
-
 .row-container {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     overflow-x: auto;
-    padding: 10px;
+    padding: 20px 10px;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 
 .row-container::-webkit-scrollbar {
@@ -244,12 +247,55 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Recently Added Pill - dynamically applies to first card */
+.recently-added-pill {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #e50914;
+    color: var(--text-white);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Alternative: Use CSS to automatically apply to first card */
+.row-container .movie-card:first-child .movie-poster::before {
+    content: "Recently Added";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #e50914;
+    color: var(--text-white);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 .poster-placeholder {
     font-size: 18px;
     font-weight: 600;
     text-align: center;
     color: var(--text-white);
     padding: 20px;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px;
 }
 
 .movie-info h4 {
@@ -347,6 +393,14 @@ body {
     justify-content: center;
     color: var(--text-white);
     font-size: 18px;
+    position: relative;
+}
+
+.video-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: var(--netflix-black);
 }
 
 .video-hint {
