@@ -467,6 +467,86 @@ body {
     }
 }
 
+/* Welcome Modal */
+.welcome-modal-content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.welcome-modal-body {
+    padding: 50px 40px;
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.welcome-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.welcome-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+.welcome-credits {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 25px;
+    border-top: 1px solid var(--netflix-gray);
+}
+
+.welcome-credits-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+.welcome-credits-list {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.welcome-credits-list li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.welcome-credits-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--netflix-red);
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.welcome-credits-list li strong {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.welcome-close-btn {
+    margin-top: 20px;
+    min-width: 150px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {

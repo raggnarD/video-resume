@@ -149,7 +149,12 @@ window.onclick = function(event) {
 // Close modal with Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-        closeModal();
+        const welcomeModal = document.getElementById('welcomeModal');
+        if (welcomeModal.classList.contains('active')) {
+            closeWelcomeModal();
+        } else {
+            closeModal();
+        }
     }
 });
 
@@ -201,8 +206,23 @@ function renderPosterImages() {
     });
 }
 
+// Welcome Modal Functions
+function closeWelcomeModal() {
+    const welcomeModal = document.getElementById('welcomeModal');
+    welcomeModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function showWelcomeModal() {
+    const welcomeModal = document.getElementById('welcomeModal');
+    welcomeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
 // Render poster images when page loads
 document.addEventListener('DOMContentLoaded', function() {
     renderPosterImages();
+    // Show welcome modal on first visit
+    showWelcomeModal();
 });
 

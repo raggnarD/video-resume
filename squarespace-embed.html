@@ -477,6 +477,86 @@
             }
         }
 
+        /* Welcome Modal */
+        .welcome-modal-content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .welcome-modal-body {
+            padding: 50px 40px;
+        }
+
+        .welcome-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .welcome-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 10px;
+        }
+
+        .welcome-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .welcome-credits {
+            width: 100%;
+            margin-top: 20px;
+            padding-top: 25px;
+            border-top: 1px solid var(--netflix-gray);
+        }
+
+        .welcome-credits-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 15px;
+        }
+
+        .welcome-credits-list {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+
+        .welcome-credits-list li {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .welcome-credits-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--netflix-red);
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .welcome-credits-list li strong {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .welcome-close-btn {
+            margin-top: 20px;
+            min-width: 150px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .navbar {
@@ -667,6 +747,32 @@
         </div>
     </section>
 
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal welcome-modal">
+        <div class="modal-content welcome-modal-content">
+            <span class="close" onclick="closeWelcomeModal()">&times;</span>
+            <div class="modal-body welcome-modal-body">
+                <div class="welcome-content">
+                    <h2 class="welcome-title">Welcome</h2>
+                    <p class="welcome-description">
+                        This site represents my work experience with a "streaming platform" UX and over the top dramatic manner.
+                    </p>
+                    <div class="welcome-credits">
+                        <p class="welcome-credits-title">This site was created using:</p>
+                        <ul class="welcome-credits-list">
+                            <li><strong>Ideation / Planning:</strong> ChatGPT, Grok</li>
+                            <li><strong>Creative:</strong> Sora, Grok Imagine, Google Gemini</li>
+                            <li><strong>Programming:</strong> Cursor</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-play welcome-close-btn" onclick="closeWelcomeModal()">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal for Role Details -->
     <div id="roleModal" class="modal">
         <div class="modal-content">
@@ -843,7 +949,12 @@
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeModal();
+                const welcomeModal = document.getElementById('welcomeModal');
+                if (welcomeModal.classList.contains('active')) {
+                    closeWelcomeModal();
+                } else {
+                    closeModal();
+                }
             }
         });
 
@@ -895,9 +1006,24 @@
             });
         }
 
+        // Welcome Modal Functions
+        function closeWelcomeModal() {
+            const welcomeModal = document.getElementById('welcomeModal');
+            welcomeModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showWelcomeModal() {
+            const welcomeModal = document.getElementById('welcomeModal');
+            welcomeModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
         // Render poster images when page loads
         document.addEventListener('DOMContentLoaded', function() {
             renderPosterImages();
+            // Show welcome modal on first visit
+            showWelcomeModal();
         });
     </script>
 </body>
